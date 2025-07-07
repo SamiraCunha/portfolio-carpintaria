@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio de Carpintaria - José Mendes Cunha (Santos)</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Portfólio de Carpintaria - José Mendes Cunha (Santos)</h1>
+    <p>Criando móveis e estruturas com qualidade e dedicação</p>
+  </header>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <section id="sobre" class="sobre">
+    <h2>Sobre José Mendes Cunha (Santos)</h2>
+    <p>Com mais de 30 anos de experiência, José Mendes Cunha (Santos) é um carpinteiro dedicado que transforma madeira em peças únicas e funcionais. Especializado em móveis sob medida e projetos personalizados, ele combina técnica, criatividade e atenção aos detalhes para atender às necessidades de seus clientes.</p>
+  </section>
+  <section id="projetos" class="projetos">
+    <h2>Projetos Realizados</h2>
+  </section>
+  <section id="servicos" class="servicos">
+    <h2>Serviços Oferecidos</h2>
+    <ul>
+      <li>Fabricação de móveis sob medida (mesas, cadeiras, armários)</li>
+      <li>Instalação de decks e pergolados</li>
+      <li>Restauração de móveis antigos</li>
+      <li>Manutenção e reparos em madeira</li>
+    </ul>
+  </section>
+  <section id="contato" class="contato">
+    <h2>Entre em Contato</h2>
+    <p>Interessado em um projeto? Entre em contato para um orçamento!</p>
+    <p>Telefone: (XX) XXXX-XXXX | Email: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
+    <p>WhatsApp: (XX) XXXX-XXXX</p>
+  </section>
+  <footer>
+    <p>&copy; 2025 José Mendes Cunha (Santos) Carpintaria. Todos os direitos reservados.</p>
+  </footer>
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-img" class="modal-content" src="" alt="Imagem ampliada" />
+  </div>
+  <script src="js/script.js"></script>
+  <script>
+    // Render projects dynamically
+    const projects = [
+      {
+        img: 'Imagens/cama.jfif',
+        alt: 'Cama Sob Medida',
+        description: 'Cama de casal elegante feita com aglomerado de alta qualidade.'
+      },
+      {
+        img: 'Imagens/comeda.jfif',
+        alt: 'Cômoda com Espelho',
+        description: 'Cômoda moderna com espelho integrado e acabamento preto brilhante.'
+      },
+      {
+        img: 'Imagens/guardafato.jfif',
+        alt: 'Guarda-roupa',
+        description: 'Guarda-roupa com portas de correr espelhadas e amplo armazenamento.'
+      }
+    ];
+
+    const projetosSection = document.getElementById('projetos');
+
+    projects.forEach(proj => {
+      const div = document.createElement('div');
+      div.className = 'projeto';
+      div.onclick = () => openModal(proj.img);
+
+      const img = document.createElement('img');
+      img.src = proj.img;
+      img.alt = proj.alt;
+
+      const p = document.createElement('p');
+      p.textContent = proj.description;
+
+      div.appendChild(img);
+      div.appendChild(p);
+      projetosSection.appendChild(div);
+    });
+  </script>
+</body>
+</html>
